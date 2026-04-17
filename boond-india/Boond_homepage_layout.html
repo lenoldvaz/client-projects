@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boond — Natural Perfume Oils from Kannauj</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #faf8f4;
+    --cream-dark: #f0ede8;
+    --cream-mid: #e2ddd5;
+    --maroon: #9B2335;
+    --green: #1D3A2F;
+    --green-light: #2d5240;
+    --text: #1a1a18;
+    --text-mid: #555550;
+    --text-light: #9a9a92;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+
+  /* ── IMAGE PLACEHOLDERS ── */
+  .img-ph {
+    width: 100%; height: 100%;
+    display: flex; align-items: flex-end; justify-content: flex-start;
+    padding: 10px 12px;
+    position: relative; overflow: hidden;
+  }
+  .img-ph-label {
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.45; line-height: 1.4;
+    position: relative; z-index: 2;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--cream); border-bottom: 0.5px solid var(--cream-mid);
+    padding: 0 56px; display: flex; align-items: center;
+    justify-content: space-between; height: 72px;
+  }
+  .nav-left, .nav-right { display: flex; align-items: center; gap: 36px; }
+  .nav-link { font-family: var(--sans); font-size: 12.5px; letter-spacing: 0.03em; color: var(--text-mid); cursor: pointer; transition: color 0.2s; }
+  .nav-link:hover { color: var(--text); }
+  .nav-link.drop::after { content: ' ▾'; font-size: 9px; }
+  .nav-icons { display: flex; gap: 18px; }
+  .nav-icon { width: 17px; height: 17px; color: var(--text-mid); }
+  .logo-center { position: absolute; left: 50%; transform: translateX(-50%); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; height: 94vh; min-height: 580px;
+    display: flex; align-items: flex-end; overflow: hidden;
+  }
+  .hero-bg-img {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #1a2e22 0%, #2d4a35 40%, #3d5a40 70%, #2a3d2e 100%);
+  }
+  .hero-bg-img::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 40%, rgba(180,140,80,0.12) 0%, transparent 60%);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(20,35,25,0.78) 0%, rgba(20,35,25,0.2) 60%, transparent 100%);
+    z-index: 1;
+  }
+  .hero-img-note {
+    position: absolute; top: 20px; right: 24px; z-index: 3;
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    background: rgba(0,0,0,0.3); color: rgba(255,255,255,0.5);
+    padding: 4px 10px; border-radius: 2px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 72px 88px; max-width: 640px;
+  }
+  .hero-eyebrow {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 18px;
+  }
+  .hero-title {
+    font-family: var(--serif); font-size: clamp(48px, 6vw, 80px);
+    font-weight: 300; color: #fff; line-height: 1.02; margin-bottom: 20px;
+  }
+  .hero-title em { font-style: italic; font-weight: 300; }
+  .hero-body {
+    font-family: var(--sans); font-size: 14px; font-weight: 300;
+    color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 420px; margin-bottom: 36px;
+  }
+  .btn-ghost {
+    display: inline-block; font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.5); color: #fff;
+    padding: 14px 36px; transition: all 0.25s;
+  }
+  .btn-ghost:hover { background: #fff; color: var(--green); border-color: #fff; }
+
+  /* ── TICKER ── */
+  .ticker { background: var(--cream-dark); border-bottom: 0.5px solid var(--cream-mid); overflow: hidden; padding: 11px 0; }
+  .ticker-track { display: flex; gap: 0; animation: scroll 22s linear infinite; width: max-content; }
+  .tick-item { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); padding: 0 32px; white-space: nowrap; }
+  .tick-item::after { content: '✦'; color: var(--maroon); font-size: 7px; margin-left: 32px; vertical-align: middle; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── PRESS ── */
+  .press { padding: 36px 72px; border-bottom: 0.5px solid var(--cream-mid); }
+  .press-label { font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); text-align: center; margin-bottom: 24px; }
+  .press-row { display: flex; align-items: center; justify-content: center; gap: 52px; flex-wrap: wrap; }
+  .p-logo { font-family: var(--serif); font-size: 19px; color: #bbb; transition: color 0.2s; cursor: default; }
+  .p-logo:hover { color: var(--text-mid); }
+  .p-logo.elle { font-size: 28px; font-weight: 500; letter-spacing: -0.03em; }
+  .p-logo.natgeo { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; border: 1.5px solid #ccc; padding: 3px 7px; color: #bbb; }
+  .p-logo.mint { font-style: italic; font-size: 24px; font-weight: 300; }
+  .p-logo.conde { font-size: 13px; letter-spacing: 0.04em; }
+
+  /* ── SECTION SHARED ── */
+  .section { padding: 80px 72px; }
+  .eyebrow { font-family: var(--sans); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--maroon); margin-bottom: 10px; }
+  .heading { font-family: var(--serif); font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; line-height: 1.1; }
+  .heading em { font-style: italic; }
+
+  /* ── BESTSELLERS ── */
+  .bestsellers { border-bottom: 0.5px solid var(--cream-mid); }
+  .bs-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 44px; }
+  .view-all { font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.04em; color: var(--text-mid); border-bottom: 0.5px solid var(--text-mid); padding-bottom: 2px; transition: color 0.2s; }
+  .view-all:hover { color: var(--text); border-color: var(--text); }
+  .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .p-card { cursor: pointer; }
+  .p-img {
+    aspect-ratio: 3/4; border-radius: 1px; margin-bottom: 16px;
+    overflow: hidden; position: relative;
+  }
+  .p-badge {
+    position: absolute; top: 12px; left: 12px; z-index: 2;
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--green); color: #fff; padding: 4px 9px;
+  }
+  .p-name { font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 3px; }
+  .p-desc { font-family: var(--sans); font-size: 11.5px; color: var(--text-light); }
+
+  /* ── PULL QUOTE ── */
+  .pullquote {
+    background: var(--green); padding: 84px 72px; text-align: center;
+  }
+  .pq-text {
+    font-family: var(--serif); font-size: clamp(22px, 2.8vw, 38px);
+    font-weight: 300; font-style: italic; color: rgba(255,255,255,0.88);
+    line-height: 1.45; max-width: 800px; margin: 0 auto 28px;
+  }
+  .pq-text strong { font-style: normal; font-weight: 400; color: #fff; }
+  .pq-link {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.45);
+    border-bottom: 0.5px solid rgba(255,255,255,0.25); padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .pq-link:hover { color: rgba(255,255,255,0.75); }
+
+  /* ── COLLECTIONS ── */
+  .collections { border-bottom: 0.5px solid var(--cream-mid); }
+  .coll-header { margin-bottom: 36px; }
+  .coll-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .c-card { cursor: pointer; }
+  .c-img { aspect-ratio: 3/4; overflow: hidden; border-radius: 1px; transition: transform 0.5s ease; }
+  .c-card:hover .c-img { transform: scale(1.03); }
+  .c-info { padding: 14px 0 0; }
+  .c-name { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--text); margin-bottom: 3px; }
+  .c-sub { font-family: var(--sans); font-size: 11px; color: var(--text-light); }
+
+  /* ── GIFTING ── */
+  .gifting { background: var(--cream-dark); padding: 80px 72px; border-bottom: 0.5px solid var(--cream-mid); }
+  .gifting-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; }
+  .gift-heading { margin-bottom: 20px; }
+  .gift-body { font-family: var(--sans); font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 32px; max-width: 380px; }
+  .gift-opts { display: flex; gap: 12px; flex-wrap: wrap; }
+  .gift-pill {
+    font-family: var(--sans); font-size: 12px; letter-spacing: 0.03em;
+    border: 0.5px solid var(--cream-mid); color: var(--text-mid);
+    padding: 9px 20px; border-radius: 1px; cursor: pointer;
+    transition: all 0.2s; background: var(--cream);
+  }
+  .gift-pill:hover { background: var(--green); color: #fff; border-color: var(--green); }
+  .gift-visual { aspect-ratio: 4/5; overflow: hidden; border-radius: 1px; }
+
+  /* ── CRAFT ── */
+  .craft { border-bottom: 0.5px solid var(--cream-mid); }
+  .craft-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .craft-visual { aspect-ratio: 4/5; overflow: hidden; border-radius: 1px; }
+  .craft-text .heading { margin-bottom: 22px; }
+  .craft-points { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+  .craft-pt { display: flex; gap: 14px; align-items: flex-start; }
+  .craft-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--maroon); margin-top: 10px; flex-shrink: 0; }
+  .craft-pt p { font-family: var(--sans); font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+  .btn-line {
+    display: inline-block; font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1px solid var(--text); color: var(--text);
+    padding: 13px 32px; transition: all 0.25s;
+  }
+  .btn-line:hover { background: var(--text); color: var(--cream); }
+
+  /* ── REVIEWS ── */
+  .reviews { border-bottom: 0.5px solid var(--cream-mid); }
+  .rev-header { margin-bottom: 44px; }
+  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .rev-card { background: var(--cream-dark); padding: 30px 26px; }
+  .rev-stars { color: var(--maroon); font-size: 11px; letter-spacing: 3px; margin-bottom: 14px; }
+  .rev-text { font-family: var(--serif); font-size: 16px; font-style: italic; font-weight: 400; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+  .rev-name { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.06em; color: var(--text-light); }
+
+  /* ── NEWSLETTER ── */
+  .newsletter { padding: 76px 72px; text-align: center; border-bottom: 0.5px solid var(--cream-mid); }
+  .newsletter .heading { margin-bottom: 10px; }
+  .nl-sub { font-family: var(--sans); font-size: 13px; color: var(--text-light); margin-bottom: 30px; }
+  .nl-form { display: flex; max-width: 400px; margin: 0 auto; }
+  .nl-input { flex: 1; font-family: var(--sans); font-size: 13px; font-weight: 300; border: 0.5px solid var(--cream-mid); border-right: none; background: #fff; padding: 13px 18px; outline: none; color: var(--text); }
+  .nl-input::placeholder { color: var(--text-light); }
+  .nl-input:focus { border-color: var(--text-mid); }
+  .nl-btn { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--text); color: var(--cream); border: none; padding: 13px 22px; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .nl-btn:hover { background: var(--green); }
+
+  /* ── FOOTER ── */
+  footer { background: #141412; padding: 60px 72px 32px; }
+  .ft-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 52px; }
+  .ft-tagline { font-family: var(--serif); font-size: 14px; font-style: italic; color: rgba(255,255,255,0.3); line-height: 1.7; max-width: 220px; margin-top: 14px; }
+  .ft-col-title { font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 18px; }
+  .ft-link { display: block; font-family: var(--sans); font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.48); margin-bottom: 10px; transition: color 0.2s; cursor: pointer; }
+  .ft-link:hover { color: rgba(255,255,255,0.85); }
+  .ft-bottom { border-top: 0.5px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; justify-content: space-between; }
+  .ft-copy { font-family: var(--sans); font-size: 11px; color: rgba(255,255,255,0.2); }
+
+  /* ── MOBILE DRAWER ── */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; height: 1.5px; background: var(--text); border-radius: 2px; transition: width 0.2s; }
+  .hamburger span:nth-child(1) { width: 20px; }
+  .hamburger span:nth-child(2) { width: 13px; }
+  .hamburger span:nth-child(3) { width: 20px; }
+  .mob-drawer {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: var(--cream); overflow-y: auto;
+    transform: translateX(-100%); transition: transform 0.28s ease;
+  }
+  .mob-drawer.open { transform: translateX(0); }
+  .mob-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 22px; border-bottom: 0.5px solid var(--cream-mid); }
+  .mob-close { font-size: 22px; color: var(--text-mid); background: none; border: none; cursor: pointer; line-height: 1; }
+  .mob-acc { border-bottom: 0.5px solid var(--cream-mid); }
+  .mob-trigger { display: flex; align-items: center; justify-content: space-between; padding: 15px 22px; cursor: pointer; }
+  .mob-trigger-label { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--text); }
+  .mob-arrow { font-size: 9px; color: var(--text-light); transition: transform 0.2s; }
+  .mob-trigger.open .mob-arrow { transform: rotate(180deg); }
+  .mob-body { display: none; padding: 0 22px 16px; }
+  .mob-body.open { display: block; }
+  .mob-sublabel { font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); font-weight: 500; margin: 12px 0 4px; }
+  .mob-item { display: block; font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--text); padding: 8px 0; border-bottom: 0.5px solid var(--cream-mid); }
+  .mob-item:last-of-type { border-bottom: none; }
+  .mob-shopall { font-family: var(--sans); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--maroon); display: block; margin-top: 14px; padding-bottom: 2px; border-bottom: 0.5px solid var(--maroon); display: inline-block; }
+  .mob-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .mob-pill { font-size: 11px; padding: 5px 11px; border-radius: 20px; border: 0.5px solid var(--cream-mid); color: var(--text-mid); }
+  .mob-plain { display: block; font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--text); padding: 15px 22px; border-bottom: 0.5px solid var(--cream-mid); }
+
+  /* ── MOBILE BREAKPOINT ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; height: 60px; }
+    .nav-left { display: none; }
+    .nav-icons { display: none; }
+    .hamburger { display: flex; }
+    .mob-drawer { display: block; }
+    .logo-center { position: static; transform: none; }
+
+    .hero { height: 88vh; min-height: 520px; align-items: flex-end; }
+    .hero-content { padding: 0 24px 60px; max-width: 100%; }
+    .hero-title { font-size: clamp(38px, 10vw, 54px); }
+    .hero-body { font-size: 13px; max-width: 100%; }
+    .hero-img-note { display: none; }
+
+    .section { padding: 52px 22px; }
+    .heading { font-size: clamp(28px, 7vw, 38px); }
+
+    .press { padding: 28px 22px; }
+    .press-row { gap: 20px 32px; }
+    .p-logo { font-size: 15px; }
+    .p-logo.elle { font-size: 22px; }
+    .p-logo.natgeo { font-size: 9px; }
+    .p-logo.mint { font-size: 18px; }
+    .p-logo.conde { font-size: 11px; }
+
+    .bs-header { margin-bottom: 28px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .p-name { font-size: 16px; }
+
+    .pullquote { padding: 56px 24px; }
+    .pq-text { font-size: clamp(20px, 5.5vw, 28px); }
+
+    .coll-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .c-name { font-size: 17px; }
+
+    .gifting { padding: 52px 22px; }
+    .gifting-inner { grid-template-columns: 1fr; gap: 32px; }
+    .gift-visual { aspect-ratio: 4/3; order: -1; }
+    .gift-body { max-width: 100%; }
+
+    .craft { }
+    .craft-inner { grid-template-columns: 1fr; gap: 32px; }
+    .craft-visual { aspect-ratio: 4/3; }
+    .craft-text .heading { font-size: clamp(26px, 6.5vw, 34px); }
+
+    .rev-grid { grid-template-columns: 1fr; gap: 14px; }
+    .rev-text { font-size: 15px; }
+
+    .newsletter { padding: 52px 22px; }
+    .nl-form { flex-direction: column; }
+    .nl-input { border-right: 0.5px solid var(--cream-mid); border-bottom: none; }
+    .nl-btn { padding: 13px; text-align: center; }
+
+    footer { padding: 44px 22px 24px; }
+    .ft-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .ft-bottom { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-top">
+    <svg width="72" height="48" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 10 68 A 50 50 0 0 1 110 68" fill="none" stroke="#9B2335" stroke-width="1.8"/>
+      <line x1="10" y1="68" x2="110" y2="68" stroke="#9B2335" stroke-width="1.2"/>
+      <text x="21" y="64" font-size="9" fill="#9B2335" font-family="serif">✦</text>
+      <text x="88" y="64" font-size="9" fill="#9B2335" font-family="serif">✦</text>
+      <text x="60" y="62" font-size="23" fill="#9B2335" font-family="serif" text-anchor="middle">बूँद</text>
+    </svg>
+    <button class="mob-close" onclick="closeDrawer()">×</button>
+  </div>
+  <div class="mob-acc">
+    <div class="mob-trigger" id="shopTrigger" onclick="toggleAcc('shop')">
+      <span class="mob-trigger-label">Shop</span>
+      <span class="mob-arrow" id="shopArrow">▾</span>
+    </div>
+    <div class="mob-body" id="shopBody">
+      <div class="mob-sublabel">Browse by type</div>
+      <span class="mob-item">Bestsellers</span>
+      <span class="mob-item">Attar</span>
+      <span class="mob-item">Dhoop</span>
+      <span class="mob-item">Sets &amp; bundles</span>
+      <span class="mob-shopall">Shop all →</span>
+      <div class="mob-sublabel" style="margin-top:18px;">Shop by notes</div>
+      <div class="mob-pills">
+        <span class="mob-pill">🌸 Floral</span>
+        <span class="mob-pill">🪵 Woody</span>
+        <span class="mob-pill">🌿 Earthy</span>
+        <span class="mob-pill">✨ Oriental</span>
+        <span class="mob-pill">🌱 Fresh</span>
+        <span class="mob-pill">🌶 Spicy</span>
+      </div>
+    </div>
+  </div>
+  <div class="mob-acc">
+    <div class="mob-trigger" id="giftTrigger" onclick="toggleAcc('gift')">
+      <span class="mob-trigger-label">Gifting</span>
+      <span class="mob-arrow" id="giftArrow">▾</span>
+    </div>
+    <div class="mob-body" id="giftBody">
+      <div class="mob-sublabel">Shop by occasion</div>
+      <span class="mob-item">Wedding gifting</span>
+      <span class="mob-item">Corporate gifting</span>
+      <span class="mob-item">Special occasions</span>
+    </div>
+  </div>
+  <span class="mob-plain">Our story</span>
+  <span class="mob-plain">Journal</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <div class="hamburger" onclick="openDrawer()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-left">
+      <span class="nav-link drop">Shop</span>
+      <span class="nav-link drop">Gifting</span>
+      <span class="nav-link">Our story</span>
+      <span class="nav-link">Journal</span>
+    </div>
+  </div>
+  <div class="logo-center">
+    <svg width="88" height="58" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 10 68 A 50 50 0 0 1 110 68" fill="none" stroke="#9B2335" stroke-width="1.8"/>
+      <line x1="10" y1="68" x2="110" y2="68" stroke="#9B2335" stroke-width="1.2"/>
+      <text x="21" y="64" font-size="9" fill="#9B2335" font-family="serif">✦</text>
+      <text x="88" y="64" font-size="9" fill="#9B2335" font-family="serif">✦</text>
+      <text x="60" y="62" font-size="23" fill="#9B2335" font-family="serif" text-anchor="middle" font-weight="400">बूँद</text>
+    </svg>
+  </div>
+  <div class="nav-icons">
+    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+  </div>
+  <div style="display:none; gap:14px; align-items:center;" id="mobIcons">
+    <svg style="width:17px;height:17px;color:var(--text-mid);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg style="width:17px;height:17px;color:var(--text-mid);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Handcrafted in Kannauj, India</p>
+    <h1 class="hero-title">Real Indian<br><em>perfume.</em></h1>
+    <p class="hero-body">We make fragrances the old way — slow distillation, natural ingredients, artisans that have done this for generations.</p>
+    <a href="#" class="btn-ghost">Explore attars</a>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="tick-item">GI Tagged Kannauj Perfume</span>
+    <span class="tick-item">Handcrafted by Artisans</span>
+    <span class="tick-item">All Natural Ingredients</span>
+    <span class="tick-item">Chemical &amp; Alcohol Free</span>
+    <span class="tick-item">Ships Worldwide</span>
+    <span class="tick-item">Sustainable &amp; Cruelty Free</span>
+    <span class="tick-item">GI Tagged Kannauj Perfume</span>
+    <span class="tick-item">Handcrafted by Artisans</span>
+    <span class="tick-item">All Natural Ingredients</span>
+    <span class="tick-item">Chemical &amp; Alcohol Free</span>
+    <span class="tick-item">Ships Worldwide</span>
+    <span class="tick-item">Sustainable &amp; Cruelty Free</span>
+  </div>
+</div>
+
+<!-- PRESS -->
+<section class="press">
+  <p class="press-label">As seen in</p>
+  <div class="press-row">
+    <span class="p-logo natgeo">NATIONAL GEOGRAPHIC</span>
+    <span class="p-logo">Al Jazeera</span>
+    <span class="p-logo elle">ELLE</span>
+    <span class="p-logo mint">mint</span>
+    <span class="p-logo conde">Condé Nast Traveler</span>
+  </div>
+</section>
+
+<!-- BESTSELLERS -->
+<section class="section bestsellers">
+  <div class="bs-header">
+    <div>
+      <p class="eyebrow">Most loved</p>
+      <h2 class="heading">Our bestsellers</h2>
+    </div>
+    <a href="#" class="view-all">View all →</a>
+  </div>
+  <div class="product-grid">
+    <div class="p-card">
+      <div class="p-img" style="background: linear-gradient(160deg,#c8bfae,#a89880);">
+        <div class="p-badge">Bestseller</div>
+      </div>
+      <p class="p-name">Maati</p>
+      <p class="p-desc">Petrichor — the scent of rain on earth</p>
+    </div>
+    <div class="p-card">
+      <div class="p-img" style="background: linear-gradient(160deg,#d4b8b8,#b89090);"></div>
+      <p class="p-name">Gulabi</p>
+      <p class="p-desc">Pure Indian rose — deep and lasting</p>
+    </div>
+    <div class="p-card">
+      <div class="p-img" style="background: linear-gradient(160deg,#b8c4b0,#8aaa80);"></div>
+      <p class="p-name">Audh</p>
+      <p class="p-desc">Agarwood — warm, resinous, grounding</p>
+    </div>
+    <div class="p-card">
+      <div class="p-img" style="background: linear-gradient(160deg,#d4c89a,#b8a870);"></div>
+      <p class="p-name">Kesar</p>
+      <p class="p-desc">Saffron — rarer than gold</p>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pullquote">
+  <p class="pq-text">"Our mission is to <strong>revive the ancient art</strong> of Indian perfume making — and take Indian fragrances to the world."</p>
+  <a href="#" class="pq-link">Our story →</a>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="section collections">
+  <div class="coll-header">
+    <p class="eyebrow">Explore</p>
+    <h2 class="heading">What are you looking for?</h2>
+  </div>
+  <div class="coll-grid">
+    <div class="c-card">
+      <div class="c-img" style="background: linear-gradient(160deg,#c4b89a,#8a7a60);"></div>
+      <div class="c-info">
+        <p class="c-name">Attar</p>
+        <p class="c-sub">Natural perfume oils</p>
+      </div>
+    </div>
+    <div class="c-card">
+      <div class="c-img" style="background: linear-gradient(160deg,#b4c0a8,#748060);"></div>
+      <div class="c-info">
+        <p class="c-name">Dhoop</p>
+        <p class="c-sub">Natural incense cones</p>
+      </div>
+    </div>
+    <div class="c-card">
+      <div class="c-img" style="background: linear-gradient(160deg,#c0b4b8,#887080);"></div>
+      <div class="c-info">
+        <p class="c-name">Sets &amp; bundles</p>
+        <p class="c-sub">Curated combinations</p>
+      </div>
+    </div>
+    <div class="c-card">
+      <div class="c-img" style="background: linear-gradient(160deg,#b8c0c8,#708090);"></div>
+      <div class="c-info">
+        <p class="c-name">Gifting</p>
+        <p class="c-sub">Wedding, corporate &amp; occasions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFTING -->
+<section class="gifting">
+  <div class="gifting-inner">
+    <div>
+      <p class="eyebrow">For every occasion</p>
+      <h2 class="heading gift-heading">Looking for<br><em>a gift?</em></h2>
+      <p class="gift-body">A fragrance that carries a story. Every Boond gift is handcrafted, beautifully packaged, and unlike anything they've received before.</p>
+      <div class="gift-opts">
+        <span class="gift-pill">Wedding gifting</span>
+        <span class="gift-pill">Corporate gifting</span>
+        <span class="gift-pill">Special occasions</span>
+      </div>
+    </div>
+    <div class="gift-visual" style="background: linear-gradient(160deg,#c8bfa8,#a89070);">
+      <div class="img-ph" style="height:100%; align-items:center; justify-content:center;"><span class="img-ph-label" style="color:#fff; text-align:center;">Gifting<br>lifestyle image</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CRAFT -->
+<section class="section craft">
+  <div class="craft-inner">
+    <div class="craft-visual" style="background: linear-gradient(160deg,#8a7060,#5a4535);">
+      <div class="img-ph" style="height:100%; align-items:center; justify-content:center;"><span class="img-ph-label" style="color:rgba(255,255,255,0.5); text-align:center;">Artisan / craft<br>process image</span></div>
+    </div>
+    <div class="craft-text">
+      <p class="eyebrow">The craft</p>
+      <h2 class="heading">Handcrafted in<br>Kannauj —<br><em>India's perfume capital</em></h2>
+      <div class="craft-points">
+        <div class="craft-pt">
+          <div class="craft-dot"></div>
+          <p>Made using the ancient Deg-Bhapka distillation technique, unchanged for over a thousand years.</p>
+        </div>
+        <div class="craft-pt">
+          <div class="craft-dot"></div>
+          <p>Employing 15+ local artisans. Every bottle handcrafted, every label screen-printed by hand.</p>
+        </div>
+        <div class="craft-pt">
+          <div class="craft-dot"></div>
+          <p>Conferred with the GI Tag by the Government of India for authentic Kannauj Perfume.</p>
+        </div>
+      </div>
+      <a href="#" class="btn-line">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews">
+  <div class="rev-header">
+    <p class="eyebrow">What our customers say</p>
+    <h2 class="heading">Loved across the world</h2>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"The Maati attar is unlike anything I've ever smelled. Pure petrichor — took me straight back to monsoon in Mumbai."</p>
+      <p class="rev-name">Priya S. — Mumbai</p>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Ordered the gifting set for 60 wedding guests. Every single person asked where it was from. The packaging is stunning."</p>
+      <p class="rev-name">Ananya R. — Delhi</p>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"The Kesar is extraordinary. You can smell why saffron costs what it costs. This is proper, old-school Indian perfumery."</p>
+      <p class="rev-name">Rahul M. — London</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <p class="eyebrow">Stay close</p>
+  <h2 class="heading">New drops. Stories. Craft.</h2>
+  <p class="nl-sub">No spam — just the good stuff, when it matters.</p>
+  <div class="nl-form">
+    <input class="nl-input" type="email" placeholder="Your email address">
+    <button class="nl-btn">Subscribe</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <svg width="72" height="48" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 10 68 A 50 50 0 0 1 110 68" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.8"/>
+        <line x1="10" y1="68" x2="110" y2="68" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/>
+        <text x="21" y="64" font-size="9" fill="rgba(255,255,255,0.22)" font-family="serif">✦</text>
+        <text x="88" y="64" font-size="9" fill="rgba(255,255,255,0.22)" font-family="serif">✦</text>
+        <text x="60" y="62" font-size="23" fill="rgba(255,255,255,0.28)" font-family="serif" text-anchor="middle">बूँद</text>
+      </svg>
+      <p class="ft-tagline">Reviving the ancient art of Indian perfume making — one drop at a time.</p>
+    </div>
+    <div>
+      <p class="ft-col-title">Shop</p>
+      <span class="ft-link">Bestsellers</span>
+      <span class="ft-link">Attar</span>
+      <span class="ft-link">Dhoop</span>
+      <span class="ft-link">Sets &amp; Bundles</span>
+    </div>
+    <div>
+      <p class="ft-col-title">Gifting</p>
+      <span class="ft-link">Wedding gifting</span>
+      <span class="ft-link">Corporate gifting</span>
+      <span class="ft-link">Special occasions</span>
+    </div>
+    <div>
+      <p class="ft-col-title">Company</p>
+      <span class="ft-link">Our story</span>
+      <span class="ft-link">The process</span>
+      <span class="ft-link">Journal</span>
+      <span class="ft-link">Contact</span>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2025 Boond Fragrances. All rights reserved.</p>
+    <p class="ft-copy">boond.ca</p>
+  </div>
+</footer>
+
+<script>
+  function openDrawer() { document.getElementById('mobDrawer').classList.add('open'); }
+  function closeDrawer() { document.getElementById('mobDrawer').classList.remove('open'); }
+  function toggleAcc(id) {
+    const body = document.getElementById(id + 'Body');
+    const arrow = document.getElementById(id + 'Arrow');
+    const trigger = document.getElementById(id + 'Trigger');
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.mob-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.mob-trigger').forEach(t => t.classList.remove('open'));
+    if (!isOpen) { body.classList.add('open'); trigger.classList.add('open'); }
+  }
+  // Show mobile cart icons on small screens
+  function checkMob() {
+    const mob = window.innerWidth <= 768;
+    const mi = document.getElementById('mobIcons');
+    if (mi) mi.style.display = mob ? 'flex' : 'none';
+  }
+  checkMob();
+  window.addEventListener('resize', checkMob);
+</script>
+</body>
+</html>
