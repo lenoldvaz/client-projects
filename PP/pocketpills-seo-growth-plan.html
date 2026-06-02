@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pocketpills — SEO/GEO/AEO Growth Plan 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --pp-dark: #1E134B;
+  --pp-indigo: #4E2A94;
+  --pp-purple: #8C60E6;
+  --pp-lilac: #E9E3FF;
+  --pp-lilac-mid: #D4CCE8;
+  --pp-teal-dark: #043B45;
+  --pp-teal: #0A8AAE;
+  --pp-teal-light: #A4E6F6;
+  --pp-lime: #D4FE5E;
+  --pp-coral: #FF6B6B;
+  --pp-peach: #FFD5C2;
+  --pp-text: #201F36;
+  --pp-text-muted: #525080;
+  --pp-text-hint: #8D90B6;
+  --pp-border: #E7E7ED;
+  --pp-surface: #F4F4FA;
+  --pp-white: #FFFFFF;
+  --pp-success: #0A8A60;
+  --pp-warning: #B94801;
+  --pp-error: #B83107;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--pp-surface);
+  color: var(--pp-text);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.site-header {
+  background: var(--pp-dark);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(30,19,75,0.25);
+}
+.header-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-mark {
+  width: 36px; height: 36px;
+  background: var(--pp-purple);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; color: white; font-size: 13px;
+  letter-spacing: -0.5px;
+}
+.logo-text { margin-left: 10px; }
+.logo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; font-weight: 700;
+  color: white; line-height: 1.2;
+}
+.logo-sub { font-size: 11px; color: #AAA4FF; }
+.header-meta { display: flex; gap: 16px; align-items: center; }
+.header-badge {
+  font-size: 11px; font-weight: 500;
+  padding: 4px 10px; border-radius: 99px;
+  background: rgba(140,96,230,0.25);
+  color: #C8B8FF;
+  border: 1px solid rgba(140,96,230,0.3);
+}
+.header-date { font-size: 11px; color: #AAA4FF; }
+
+/* NAV TABS */
+.nav-bar {
+  background: rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+.nav-btn {
+  padding: 12px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,0.5);
+  white-space: nowrap;
+  transition: all 0.15s;
+  letter-spacing: 0.01em;
+}
+.nav-btn:hover:not(.active) { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); }
+.nav-btn.active {
+  color: #C8B8FF;
+  border-bottom-color: var(--pp-purple);
+  background: rgba(140,96,230,0.12);
+}
+
+/* LAYOUT */
+.main { max-width: 1200px; margin: 0 auto; padding: 32px; }
+.section { display: none; }
+.section.active { display: block; }
+
+/* CARDS */
+.card {
+  background: var(--pp-white);
+  border: 1px solid var(--pp-border);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.card-dark {
+  background: var(--pp-dark);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+}
+.card-teal {
+  background: var(--pp-teal-dark);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+}
+.card-purple {
+  background: linear-gradient(135deg, #2D1660 0%, #1E134B 100%);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(140,96,230,0.2);
+}
+
+/* GRIDS */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.grid4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.grid5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
+
+/* TYPOGRAPHY */
+.overline {
+  font-size: 10px; font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--pp-purple);
+  margin-bottom: 8px;
+}
+.overline-teal { color: var(--pp-teal); }
+.overline-coral { color: var(--pp-coral); }
+.overline-light { color: var(--pp-teal-light); }
+.overline-success { color: var(--pp-success); }
+.overline-lime { color: #5A7200; }
+
+h1 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--pp-dark); line-height: 1.2; }
+h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--pp-dark); margin-bottom: 6px; }
+h3 { font-size: 15px; font-weight: 600; color: var(--pp-dark); margin-bottom: 6px; }
+p { font-size: 13px; color: var(--pp-text-muted); line-height: 1.65; }
+
+/* METRICS */
+.metric {
+  background: var(--pp-surface);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.metric-num { font-size: 26px; font-weight: 600; color: var(--pp-dark); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.metric-label { font-size: 11px; color: var(--pp-text-hint); margin-top: 4px; }
+.metric-delta {
+  font-size: 10px; font-weight: 600;
+  padding: 3px 8px; border-radius: 99px;
+  margin-top: 6px; display: inline-block;
+}
+.delta-bad { background: #FFE8E8; color: var(--pp-error); }
+.delta-ok { background: #FFF3E0; color: var(--pp-warning); }
+.delta-good { background: #D8F7EA; color: var(--pp-success); }
+
+/* TAGS */
+.tag {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  padding: 3px 9px; border-radius: 99px;
+  text-transform: uppercase; letter-spacing: 0.07em;
+}
+.tag-purple { background: var(--pp-lilac); color: var(--pp-indigo); }
+.tag-teal { background: #D9F7FA; color: var(--pp-teal-dark); }
+.tag-coral { background: var(--pp-peach); color: #8B3A1A; }
+.tag-green { background: #D8F7EA; color: var(--pp-success); }
+.tag-warn { background: #FFF3E0; color: var(--pp-warning); }
+.tag-red { background: #FFE8E8; color: var(--pp-error); }
+.tag-lime { background: #F0FECC; color: #4A6000; }
+.tag-dark { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); }
+
+/* FINDINGS */
+.finding {
+  border-left: 3px solid var(--pp-purple);
+  padding: 11px 14px;
+  background: var(--pp-surface);
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 10px;
+}
+.finding:last-child { margin-bottom: 0; }
+.finding-red { border-left-color: var(--pp-coral); }
+.finding-teal { border-left-color: var(--pp-teal); }
+.finding-green { border-left-color: var(--pp-success); }
+.finding-warn { border-left-color: #FFA13C; }
+.finding-title { font-size: 13px; font-weight: 600; color: var(--pp-dark); margin-bottom: 3px; }
+.finding-body { font-size: 12px; color: var(--pp-text-muted); line-height: 1.55; }
+
+/* KEYWORD TABLE */
+.kw-table { width: 100%; border-collapse: collapse; }
+.kw-table th {
+  font-size: 10px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--pp-text-hint);
+  padding: 8px 12px; text-align: left;
+  border-bottom: 2px solid var(--pp-border);
+}
+.kw-table td { padding: 9px 12px; font-size: 12px; border-bottom: 1px solid var(--pp-border); }
+.kw-table tr:last-child td { border-bottom: none; }
+.kw-table tr:hover td { background: var(--pp-surface); }
+.kw-name { color: var(--pp-text); font-weight: 500; }
+.kw-vol { color: var(--pp-indigo); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.kw-kd { text-align: center; }
+.kw-pos { text-align: center; font-size: 11px; }
+.kd-pill { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 5px; }
+.kd-easy { background: #D8F7EA; color: var(--pp-success); }
+.kd-med { background: #FFF3E0; color: var(--pp-warning); }
+.kd-hard { background: #FFE8E8; color: var(--pp-error); }
+
+/* PHASES */
+.phase {
+  border: 1px solid var(--pp-border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition: box-shadow 0.2s;
+}
+.phase:hover { box-shadow: 0 4px 20px rgba(78,42,148,0.08); }
+.phase-header {
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  user-select: none;
+  background: white;
+  transition: background 0.15s;
+}
+.phase-header:hover { background: var(--pp-surface); }
+.phase-num {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: white;
+  flex-shrink: 0;
+}
+.phase-meta { flex: 1; }
+.phase-title { font-size: 14px; font-weight: 600; color: var(--pp-dark); }
+.phase-sub { font-size: 11px; color: var(--pp-text-muted); margin-top: 2px; }
+.phase-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.phase-toggle { color: var(--pp-text-hint); font-size: 18px; transition: transform 0.2s; flex-shrink: 0; }
+.phase-toggle.open { transform: rotate(180deg); }
+.phase-body { padding: 0 22px 20px; display: none; border-top: 1px solid var(--pp-border); }
+.phase-body.open { display: block; }
+
+.track-label {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; margin: 16px 0 10px;
+  padding: 6px 10px; border-radius: 6px; display: inline-block;
+}
+.track-technical { background: #FFE8E8; color: var(--pp-error); }
+.track-content { background: var(--pp-lilac); color: var(--pp-indigo); }
+.track-links { background: #D9F7FA; color: var(--pp-teal-dark); }
+
+/* TACTICS */
+.tactic {
+  padding: 12px 14px;
+  background: var(--pp-surface);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.tactic:last-of-type { margin-bottom: 0; }
+.tactic-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.tactic-title { font-size: 13px; font-weight: 600; color: var(--pp-dark); margin-bottom: 4px; }
+.tactic-desc { font-size: 12px; color: var(--pp-text-muted); line-height: 1.55; }
+
+/* PHASE KPIs */
+.phase-kpis {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 8px; margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--pp-border);
+}
+.pkpi {
+  background: white;
+  border: 1px solid var(--pp-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+}
+.pkpi-val { font-size: 18px; font-weight: 600; color: var(--pp-purple); }
+.pkpi-lbl { font-size: 10px; color: var(--pp-text-hint); margin-top: 3px; }
+
+/* CONTENT CALENDAR */
+.cal-section-label {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; padding: 6px 0;
+  margin: 14px 0 8px;
+  border-bottom: 2px solid var(--pp-border);
+  display: flex; align-items: center; gap: 8px;
+}
+.content-row {
+  display: flex; gap: 12px; align-items: center;
+  padding: 10px 12px;
+  background: white;
+  border: 1px solid var(--pp-border);
+  border-radius: 10px;
+  margin-bottom: 6px;
+  transition: all 0.15s;
+}
+.content-row:hover { border-color: var(--pp-lilac-mid); box-shadow: 0 2px 8px rgba(140,96,230,0.08); }
+.mo-badge {
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 99px;
+  min-width: 56px; text-align: center; flex-shrink: 0;
+}
+.content-title { font-size: 13px; font-weight: 500; color: var(--pp-dark); margin-bottom: 2px; }
+.content-meta { font-size: 11px; color: var(--pp-text-muted); }
+
+/* COMPETITOR TABLE */
+.comp-table { width: 100%; border-collapse: collapse; }
+.comp-table th {
+  font-size: 10px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--pp-text-hint);
+  padding: 10px 14px; text-align: left;
+  background: var(--pp-surface);
+  border-bottom: 1px solid var(--pp-border);
+}
+.comp-table td { padding: 12px 14px; font-size: 13px; border-bottom: 1px solid var(--pp-border); vertical-align: middle; }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table tr:hover td { background: var(--pp-surface); }
+.comp-name { font-weight: 700; }
+.comp-strategy { font-size: 12px; color: var(--pp-text-muted); }
+.comp-traffic { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+
+/* GEO ITEMS */
+.geo-item {
+  padding: 12px 14px;
+  background: var(--pp-surface);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+.geo-title { font-size: 13px; font-weight: 600; color: var(--pp-dark); margin-bottom: 4px; }
+.geo-body { font-size: 12px; color: var(--pp-text-muted); line-height: 1.55; }
+
+/* KPI TARGET ROWS */
+.kpi-target-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; padding: 9px 0;
+  border-bottom: 1px solid var(--pp-border);
+}
+.kpi-target-row:last-child { border-bottom: none; }
+.kpi-target-label { color: var(--pp-text-muted); }
+.kpi-target-val { font-weight: 600; color: var(--pp-dark); }
+
+/* INSIGHT BLOCKS */
+.insight {
+  display: flex; gap: 14px;
+  padding: 12px 14px;
+  background: var(--pp-surface);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+.insight-icon { font-size: 22px; flex-shrink: 0; }
+.insight-title { font-size: 13px; font-weight: 600; color: var(--pp-dark); margin-bottom: 3px; }
+.insight-body { font-size: 12px; color: var(--pp-text-muted); line-height: 1.55; }
+
+/* TRAFFIC BAR */
+.traffic-bar-row {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 8px; font-size: 12px;
+}
+.traffic-dot { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+.traffic-label { flex: 1; color: var(--pp-text); }
+.traffic-pct { font-weight: 700; }
+
+/* DIVIDER */
+.divider { height: 1px; background: var(--pp-border); margin: 18px 0; }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-top: 14px;
+}
+.highlight-purple { background: var(--pp-lilac); }
+.highlight-warn { background: #FFF3E0; }
+.highlight-success { background: #D8F7EA; }
+
+/* SUMMARY BAND */
+.summary-band {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  padding: 16px 20px;
+  background: rgba(140,96,230,0.06);
+  border: 1px solid var(--pp-lilac-mid);
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+.sb-item { text-align: center; }
+.sb-val { font-size: 22px; font-weight: 600; color: var(--pp-purple); }
+.sb-label { font-size: 10px; color: var(--pp-text-hint); margin-top: 2px; }
+
+/* PRINT */
+@media print {
+  .site-header { position: relative; }
+  .phase-body { display: block !important; }
+  .section { display: block !important; margin-bottom: 40px; }
+  .nav-bar { display: none; }
+}
+
+/* CHART LEGEND */
+.chart-legend {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  font-size: 12px; color: var(--pp-text-muted);
+  margin-bottom: 12px;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-swatch { width: 12px; height: 3px; border-radius: 2px; }
+.legend-dash { width: 16px; height: 2px; background-image: repeating-linear-gradient(90deg, currentColor 0, currentColor 4px, transparent 4px, transparent 8px); }
+
+/* ANSWER GRID */
+.answer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.answer-item {
+  padding: 10px 13px;
+  background: var(--pp-surface);
+  border-left: 3px solid var(--pp-teal);
+  border-radius: 0 8px 8px 0;
+}
+.answer-q { font-size: 12px; font-weight: 600; color: var(--pp-dark); margin-bottom: 2px; }
+.answer-meta { font-size: 11px; color: var(--pp-text-muted); }
+
+/* FOOTER */
+.site-footer {
+  background: var(--pp-dark);
+  padding: 24px 32px;
+  text-align: center;
+  margin-top: 48px;
+}
+.footer-text { font-size: 12px; color: #AAA4FF; }
+
+@media (max-width: 768px) {
+  .main { padding: 16px; }
+  .grid2, .grid3, .grid4, .grid5 { grid-template-columns: 1fr; }
+  .header-top { padding: 12px 16px; }
+  .nav-inner { padding: 0 16px; }
+  .phase-tags { display: none; }
+  .answer-grid { grid-template-columns: 1fr; }
+  .phase-kpis { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-top">
+    <div style="display:flex;align-items:center">
+      <div class="logo-mark">Pp</div>
+      <div class="logo-text">
+        <div class="logo-title">Pocketpills</div>
+        <div class="logo-sub">SEO / GEO / AEO Growth Plan</div>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span class="header-badge">Semrush Audit · June 2026</span>
+      <span class="header-date">Prepared for internal review</span>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <div class="nav-inner">
+      <button class="nav-btn active" onclick="show('audit')">🔍 Audit findings</button>
+      <button class="nav-btn" onclick="show('gaps')">📊 Competitive gaps</button>
+      <button class="nav-btn" onclick="show('keywords')">🎯 Keyword opportunities</button>
+      <button class="nav-btn" onclick="show('plan')">🗓 3–6–12 month plan</button>
+      <button class="nav-btn" onclick="show('content')">✍️ Content calendar</button>
+      <button class="nav-btn" onclick="show('geo')">🤖 GEO / AEO</button>
+      <button class="nav-btn" onclick="show('kpis')">📈 KPIs &amp; targets</button>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- ======================== AUDIT FINDINGS ======================== -->
+<div class="section active" id="s-audit">
+
+  <div class="card-dark">
+    <div class="overline overline-light">Semrush audit — pocketpills.com · June 2026</div>
+    <h2 style="color:#fff;font-size:24px;margin-bottom:8px;font-family:'Playfair Display',serif">"You're invisible at the consideration stage."</h2>
+    <p style="color:#AAA4FF;max-width:680px;font-size:14px">40% of organic traffic goes to the homepage. The rest is brand searches and competitor pharmacy locator pages. You have almost zero non-brand organic traffic — meaning your paid media is doing all the heavy lifting at every funnel stage, including the research and comparison phase where organic content should be doing the work.</p>
+  </div>
+
+  <div class="grid4">
+    <div class="metric">
+      <div class="metric-num">22.3K</div>
+      <div class="metric-label">Estimated organic visits/mo (Semrush)</div>
+      <div class="metric-delta delta-bad">vs 81K Felix · 194K Maple</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">36/100</div>
+      <div class="metric-label">Domain authority score</div>
+      <div class="metric-delta delta-bad">Felix: 44 · Maple: 44 · Gap: 8pts</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">25,074</div>
+      <div class="metric-label">Keywords ranking in Canada</div>
+      <div class="metric-delta delta-ok">Mostly brand + local pharmacy</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">1,467</div>
+      <div class="metric-label">Referring domains</div>
+      <div class="metric-delta delta-bad">Felix: 2,036 · Maple: 3,430</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <div class="card">
+        <div class="overline overline-coral">🚨 Critical issues</div>
+        <div class="finding finding-red">
+          <div class="finding-title">Pharmacy locator pages are eating your crawl budget</div>
+          <div class="finding-body">Hundreds of pages like /pharmacy-near-me/costco and /shoppers-drug-mart rank for competitor brand names with zero conversion value. They dilute your topical authority signal for pharmacy and health content while sending users to competitors.</div>
+        </div>
+        <div class="finding finding-red">
+          <div class="finding-title">"ozempic" = position 30 for 110,000 monthly searches</div>
+          <div class="finding-body">Your highest-value keyword. Felix and Maple rank page 1. You're invisible. No educational content layer, no FAQ structure, no schema markup on drug pages means Google can't understand the depth of your expertise.</div>
+        </div>
+        <div class="finding finding-red">
+          <div class="finding-title">Zero consideration-stage content</div>
+          <div class="finding-body">No "how does ozempic work", no "cost of wegovy in canada", no "antidepressants online canada". Felix ranks for these. Maple ranks for these. You don't exist in the research phase — the exact moment someone decides which pharmacy to try.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="overline" style="color:#FFA13C">⚠️ Structural weaknesses</div>
+        <div class="finding finding-warn">
+          <div class="finding-title">Authority gap: 8 points behind both primary competitors</div>
+          <div class="finding-body">Maple has 3,430 referring domains vs your 1,467. Without an active link-building program, this gap compounds over time. Google weighs authority heavily for YMYL (health) content — your new articles rank slower and lower because of this gap.</div>
+        </div>
+        <div class="finding finding-warn">
+          <div class="finding-title">No interactive tools (Felix's biggest traffic driver)</div>
+          <div class="finding-body">Felix's calorie deficit calculator drives 27,100 searches/mo at position 6. Their BMI calculator ranks for 2,900/mo. Tools generate natural backlinks, increase dwell time, and drive repeat visits — all strong ranking signals that you're currently missing entirely.</div>
+        </div>
+        <div class="finding finding-warn">
+          <div class="finding-title">GEO/AEO presence untracked and unoptimised</div>
+          <div class="finding-body">You're seeing ChatGPT conversions with no tracking infrastructure. You likely appear in some AI answers by accident due to drug pricing data. Competitors are building for this deliberately with schema markup and structured content formats.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="overline overline-success">✅ What's working</div>
+        <div class="finding finding-green">
+          <div class="finding-title">Strong brand search dominance (#1 for all variants)</div>
+          <div class="finding-body">#1 for "pocketpills", "pocket pills", "pocketpills pharmacy", "pocketpills canada". Brand awareness is converting — the pipeline just needs filling at earlier funnel stages so paid media costs less per acquisition.</div>
+        </div>
+        <div class="finding finding-green">
+          <div class="finding-title">Transactional drug pages are live and indexed</div>
+          <div class="finding-body">/rx/ozempic, /rx/wegovy, /drug/mounjaro are indexed and getting traffic. The transactional foundation exists — they need SEO-optimised content layers on top to rank for broader terms, not just direct navigation.</div>
+        </div>
+        <div class="finding finding-green">
+          <div class="finding-title">"buy ozempic online" — position 1 (140/mo)</div>
+          <div class="finding-body">Low volume but high intent. Proof that transactional optimisation is working when you do it. The model works — it just needs to be scaled to the broader informational keywords that feed the funnel earlier.</div>
+        </div>
+        <div class="finding finding-green">
+          <div class="finding-title">"medication prices in canada" — position 1</div>
+          <div class="finding-body">Your /search-prices page ranks #1. Price transparency is an SEO moat and a brand differentiator simultaneously. This page drives 1.59% of all organic traffic — a strong signal to invest more in price-related content.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="overline">Traffic composition breakdown</div>
+        <p style="margin-bottom:14px;font-size:12px">Where your ~22K estimated organic visits currently come from</p>
+        <div class="traffic-bar-row">
+          <div class="traffic-dot" style="background:var(--pp-purple)"></div>
+          <div class="traffic-label">Brand terms (pocketpills, pocket pills...)</div>
+          <div class="traffic-pct" style="color:var(--pp-purple)">~34%</div>
+        </div>
+        <div class="traffic-bar-row">
+          <div class="traffic-dot" style="background:var(--pp-teal)"></div>
+          <div class="traffic-label">Competitor pharmacy locator pages</div>
+          <div class="traffic-pct" style="color:var(--pp-teal)">~28%</div>
+        </div>
+        <div class="traffic-bar-row">
+          <div class="traffic-dot" style="background:var(--pp-coral)"></div>
+          <div class="traffic-label">Drug transactional pages (/rx/, /drug/)</div>
+          <div class="traffic-pct" style="color:var(--pp-coral)">~15%</div>
+        </div>
+        <div class="traffic-bar-row">
+          <div class="traffic-dot" style="background:#FFA13C"></div>
+          <div class="traffic-label">Local "pharmacy near me" searches</div>
+          <div class="traffic-pct" style="color:#FFA13C">~14%</div>
+        </div>
+        <div class="traffic-bar-row" style="margin-bottom:0">
+          <div class="traffic-dot" style="background:var(--pp-text-hint)"></div>
+          <div class="traffic-label">Informational / consideration content</div>
+          <div class="traffic-pct" style="color:var(--pp-text-hint)">~9%</div>
+        </div>
+        <div class="highlight-box highlight-warn" style="margin-top:14px">
+          <div style="font-size:12px;color:var(--pp-warning);font-weight:600;margin-bottom:3px">Consideration content share</div>
+          <div style="font-size:12px;color:#8B4800">Only ~9% of traffic comes from consideration-stage content. Felix: ~40%. Maple: ~60%. This is the core gap the 12-month plan closes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== COMPETITIVE GAPS ======================== -->
+<div class="section" id="s-gaps">
+
+  <div class="card-dark">
+    <div class="overline overline-light">Competitive intelligence</div>
+    <h2 style="color:#fff;font-size:22px;margin-bottom:8px;font-family:'Playfair Display',serif">Felix is 3.6× your traffic. Maple is 8.7×. Both strategies are copyable.</h2>
+    <p style="color:#AAA4FF;max-width:680px;font-size:14px">Neither Felix nor Maple has a significant technical or product advantage. Their traffic gap is entirely explained by content depth and authority. Felix wins with interactive tools. Maple wins with comprehensive informational blog content. Both are executable with an AI-assisted content pipeline.</p>
+  </div>
+
+  <div class="card">
+    <div class="overline">Domain comparison — Semrush data, Canada database</div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Core SEO strategy</th>
+          <th style="text-align:right">Est. traffic/mo</th>
+          <th style="text-align:center">Domain authority</th>
+          <th style="text-align:right">Ref. domains</th>
+          <th style="text-align:center">Gap to close</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="comp-name" style="color:var(--pp-purple)">Pocketpills</span></td>
+          <td><span class="comp-strategy">Brand + pharmacy locators + thin drug pages</span></td>
+          <td class="comp-traffic">22,300</td>
+          <td style="text-align:center"><span class="tag tag-warn">36</span></td>
+          <td style="text-align:right;font-size:13px">1,467</td>
+          <td style="text-align:center">—</td>
+        </tr>
+        <tr>
+          <td><span class="comp-name" style="color:#2B6CB0">Felix (felixforyou.ca)</span></td>
+          <td><span class="comp-strategy">Interactive tools + condition pages + full drug content hubs</span></td>
+          <td class="comp-traffic">81,740</td>
+          <td style="text-align:center"><span class="tag tag-teal">44</span></td>
+          <td style="text-align:right;font-size:13px">2,036</td>
+          <td style="text-align:center"><span class="tag tag-coral">3.6×</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name" style="color:var(--pp-teal-dark)">Maple (getmaple.ca)</span></td>
+          <td><span class="comp-strategy">Deep informational blog + drug cost guides + tools + comparisons</span></td>
+          <td class="comp-traffic">194,876</td>
+          <td style="text-align:center"><span class="tag tag-teal">44</span></td>
+          <td style="text-align:right;font-size:13px">3,430</td>
+          <td style="text-align:center"><span class="tag tag-red">8.7×</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="overline" style="color:#2B6CB0">The Felix playbook — what to copy</div>
+      <div class="insight">
+        <div class="insight-icon">🧮</div>
+        <div>
+          <div class="insight-title">Interactive tools drive 30%+ of their traffic</div>
+          <div class="insight-body">Calorie deficit calculator: 27,100 searches/mo at position 6. BMI calculator: 2,900/mo. Tools generate backlinks from health blogs, create high dwell time, and drive return visits — all compounding ranking signals. You already have a BMI calc and eligibility checker planned in your design system.</div>
+        </div>
+      </div>
+      <div class="insight">
+        <div class="insight-icon">💊</div>
+        <div>
+          <div class="insight-title">Every drug page is a full content hub</div>
+          <div class="insight-body">Felix's /medications/ozempic covers mechanism, side effects, cost, how to get it, FAQs, and an assessment CTA — all in one page. This is the content depth that earns rankings for broader terms beyond just the drug name.</div>
+        </div>
+      </div>
+      <div class="insight">
+        <div class="insight-icon">📝</div>
+        <div>
+          <div class="insight-title">Condition pages own high-intent searches</div>
+          <div class="insight-body">"ed canada" (1,000/mo) → Felix #1. "tretinoin canada" (1,900/mo) → Felix #1. "cialis canada" (1,600/mo) → Felix #1. Every condition they treat has a dedicated landing page that also ranks organically — dual purpose for paid + SEO.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="overline" style="color:var(--pp-teal-dark)">The Maple playbook — what to copy</div>
+      <div class="insight">
+        <div class="insight-icon">📰</div>
+        <div>
+          <div class="insight-title">Blog content captures cost and comparison searches</div>
+          <div class="insight-body">"tirzepatide canada" (4,400/mo) → Maple #1 via blog post. "how much does ozempic cost in canada" (1,600/mo) → Maple #1. "mounjaro cost canada" (1,600/mo) → Maple #1. Pure informational content driving highly qualified, pre-conversion traffic at zero media cost.</div>
+        </div>
+      </div>
+      <div class="insight">
+        <div class="insight-icon">🆚</div>
+        <div>
+          <div class="insight-title">Competitor comparison pages steal branded traffic</div>
+          <div class="insight-body">Maple ranks position 5 for "felix" (49,500/mo!) via a Maple vs Felix comparison page. Even a 0.1% CTR on competitor branded searches = 50+ visits/mo of high-intent traffic at zero ad cost. A "Pocketpills vs Felix" page is low-effort, high-leverage.</div>
+        </div>
+      </div>
+      <div class="insight">
+        <div class="insight-icon">🔗</div>
+        <div>
+          <div class="insight-title">3,430 referring domains = faster ranking velocity</div>
+          <div class="insight-body">Maple's authority means new content ranks in days, not months. Your 1,467 referring domains means a 6-12 week lag on new content. Closing this gap is the single most impactful technical lever in the plan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="overline overline-coral">Keywords you don't rank for — that competitors own right now</div>
+    <div class="grid3" style="margin-top:12px;margin-bottom:0">
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--pp-text-hint);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--pp-border)">Weight loss / GLP-1</div>
+        <table style="width:100%;font-size:12px;border-collapse:collapse">
+          <tr><td style="padding:5px 0;color:var(--pp-text)">tirzepatide canada</td><td style="text-align:right"><span class="tag tag-teal">4.4K/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">semaglutide canada</td><td style="text-align:right"><span class="tag tag-teal">2.9K/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">mounjaro cost canada</td><td style="text-align:right"><span class="tag tag-purple">1.6K/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">how much is ozempic</td><td style="text-align:right"><span class="tag tag-purple">2.4K/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">weight loss medication canada</td><td style="text-align:right"><span class="tag tag-purple">3.6K/mo</span></td></tr>
+        </table>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--pp-text-hint);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--pp-border)">Mental health</div>
+        <table style="width:100%;font-size:12px;border-collapse:collapse">
+          <tr><td style="padding:5px 0;color:var(--pp-text)">anxiety medication canada</td><td style="text-align:right"><span class="tag tag-purple">~800/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">adhd medication canada</td><td style="text-align:right"><span class="tag tag-purple">~1K/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">online prescription canada</td><td style="text-align:right"><span class="tag tag-warn">110/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">depression treatment online</td><td style="text-align:right"><span class="tag tag-warn">low vol.</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">ssri online canada</td><td style="text-align:right"><span class="tag tag-warn">low vol.</span></td></tr>
+        </table>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--pp-text-hint);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--pp-border)">Transfer / pharmacy</div>
+        <table style="width:100%;font-size:12px;border-collapse:collapse">
+          <tr><td style="padding:5px 0;color:var(--pp-text)">best online pharmacy canada</td><td style="text-align:right"><span class="tag tag-purple">~1.2K/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">transfer prescription online</td><td style="text-align:right"><span class="tag tag-purple">~500/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">medication delivery canada</td><td style="text-align:right"><span class="tag tag-purple">~700/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">online pharmacy canada</td><td style="text-align:right"><span class="tag tag-red">590/mo</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--pp-text)">switch pharmacy canada</td><td style="text-align:right"><span class="tag tag-warn">low vol.</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== KEYWORD OPPORTUNITIES ======================== -->
+<div class="section" id="s-keywords">
+
+  <div class="card-purple">
+    <div class="overline overline-light">GLP-1 search universe — total addressable organic traffic in Canada</div>
+    <div class="grid5" style="margin:12px 0 0">
+      <div class="metric" style="background:rgba(255,255,255,0.08)">
+        <div class="metric-num" style="color:#fff;font-size:22px">22.2K</div>
+        <div class="metric-label" style="color:#AAA4FF">wegovy canada/mo</div>
+      </div>
+      <div class="metric" style="background:rgba(255,255,255,0.08)">
+        <div class="metric-num" style="color:#fff;font-size:22px">18.1K</div>
+        <div class="metric-label" style="color:#AAA4FF">ozempic canada/mo</div>
+      </div>
+      <div class="metric" style="background:rgba(255,255,255,0.08)">
+        <div class="metric-num" style="color:#fff;font-size:22px">6.6K</div>
+        <div class="metric-label" style="color:#AAA4FF">mounjaro canada/mo</div>
+      </div>
+      <div class="metric" style="background:rgba(255,255,255,0.08)">
+        <div class="metric-num" style="color:#fff;font-size:22px">4.4K</div>
+        <div class="metric-label" style="color:#AAA4FF">tirzepatide canada/mo</div>
+      </div>
+      <div class="metric" style="background:rgba(255,255,255,0.08)">
+        <div class="metric-num" style="color:#fff;font-size:22px">2.9K</div>
+        <div class="metric-label" style="color:#AAA4FF">semaglutide canada/mo</div>
+      </div>
+    </div>
+    <p style="color:#AAA4FF;font-size:12px;margin-top:12px;max-width:700px">Total GLP-1 universe: 80K+ searches/month in Canada. Pocketpills currently captures &lt;0.3% of this. Felix and Maple combined capture ~35%. There's a first-mover advantage for whoever builds the most comprehensive GLP-1 content hub in Canada — that should be you.</p>
+  </div>
+
+  <div class="card">
+    <div class="overline overline-coral" style="margin-bottom:12px">🔥 Quick wins — Low KD, unranked, achievable in 0–3 months</div>
+    <table class="kw-table">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th style="text-align:right">Monthly vol.</th>
+          <th style="text-align:center">KD score</th>
+          <th style="text-align:center">Your rank</th>
+          <th style="text-align:center">Content type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="kw-name">how to get ozempic in canada</td><td class="kw-vol">1,000</td><td class="kw-kd"><span class="kd-pill kd-easy">24</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-green">FAQ article</span></td></tr>
+        <tr><td class="kw-name">semaglutide canada</td><td class="kw-vol">2,900</td><td class="kw-kd"><span class="kd-pill kd-easy">17</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-purple">Hub page</span></td></tr>
+        <tr><td class="kw-name">is ozempic covered by ohip</td><td class="kw-vol">1,300</td><td class="kw-kd"><span class="kd-pill kd-easy">39</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-green">FAQ article</span></td></tr>
+        <tr><td class="kw-name">does ozempic need to be refrigerated</td><td class="kw-vol">1,000</td><td class="kw-kd"><span class="kd-pill kd-easy">43</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-green">FAQ article</span></td></tr>
+        <tr><td class="kw-name">finasteride canada</td><td class="kw-vol">1,300</td><td class="kw-kd"><span class="kd-pill kd-easy">32</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-purple">Drug page</span></td></tr>
+        <tr><td class="kw-name">buy ozempic online canada</td><td class="kw-vol">140</td><td class="kw-kd"><span class="kd-pill kd-easy">38</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-coral">Transact.</span></td></tr>
+        <tr><td class="kw-name">glp-1 weight loss canada</td><td class="kw-vol">70</td><td class="kw-kd"><span class="kd-pill kd-easy">24</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-teal">Hub page</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="overline overline-teal" style="margin-bottom:12px">🎯 Strategic targets — Medium KD, high volume, 3–6 months</div>
+    <table class="kw-table">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th style="text-align:right">Monthly vol.</th>
+          <th style="text-align:center">KD score</th>
+          <th style="text-align:center">Your rank</th>
+          <th style="text-align:center">Content type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="kw-name">wegovy canada</td><td class="kw-vol">22,200</td><td class="kw-kd"><span class="kd-pill kd-med">40</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-purple">Drug hub</span></td></tr>
+        <tr><td class="kw-name">ozempic canada</td><td class="kw-vol">18,100</td><td class="kw-kd"><span class="kd-pill kd-med">51</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-purple">Drug hub</span></td></tr>
+        <tr><td class="kw-name">mounjaro canada</td><td class="kw-vol">6,600</td><td class="kw-kd"><span class="kd-pill kd-med">39</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-purple">Drug hub</span></td></tr>
+        <tr><td class="kw-name">tirzepatide canada</td><td class="kw-vol">4,400</td><td class="kw-kd"><span class="kd-pill kd-med">40</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-teal">Blog/hub</span></td></tr>
+        <tr><td class="kw-name">weight loss medication canada</td><td class="kw-vol">3,600</td><td class="kw-kd"><span class="kd-pill kd-med">45</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-teal">Hub page</span></td></tr>
+        <tr><td class="kw-name">how much does ozempic cost in canada</td><td class="kw-vol">1,600</td><td class="kw-kd"><span class="kd-pill kd-med">47</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-green">Cost guide</span></td></tr>
+        <tr><td class="kw-name">ozempic cost canada</td><td class="kw-vol">1,900</td><td class="kw-kd"><span class="kd-pill kd-med">45</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-green">Cost guide</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="overline" style="margin-bottom:12px">🏆 Authority plays — High KD, worth the fight, 6–12 months</div>
+    <table class="kw-table">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th style="text-align:right">Monthly vol.</th>
+          <th style="text-align:center">KD score</th>
+          <th style="text-align:center">Your rank</th>
+          <th style="text-align:center">Content type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="kw-name">ozempic</td><td class="kw-vol">110,000</td><td class="kw-kd"><span class="kd-pill kd-hard">—</span></td><td class="kw-pos" style="color:var(--pp-error);font-weight:700">pos. 30</td><td style="text-align:center"><span class="tag tag-purple">Drug hub</span></td></tr>
+        <tr><td class="kw-name">what is ozempic</td><td class="kw-vol">8,100</td><td class="kw-kd"><span class="kd-pill kd-hard">79</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-green">Editorial</span></td></tr>
+        <tr><td class="kw-name">how does ozempic work</td><td class="kw-vol">6,600</td><td class="kw-kd"><span class="kd-pill kd-hard">72</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-green">Editorial</span></td></tr>
+        <tr><td class="kw-name">online pharmacy canada</td><td class="kw-vol">590</td><td class="kw-kd"><span class="kd-pill kd-hard">73</span></td><td class="kw-pos">—</td><td style="text-align:center"><span class="tag tag-coral">Brand page</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ======================== 3-6-12 MONTH PLAN ======================== -->
+<div class="section" id="s-plan">
+
+  <div class="card-dark">
+    <div class="overline overline-light">Growth strategy</div>
+    <h2 style="color:#fff;font-size:22px;margin-bottom:8px;font-family:'Playfair Display',serif">The path to #1: topical authority + tools + links</h2>
+    <p style="color:#AAA4FF;max-width:700px;font-size:14px">Three parallel tracks run simultaneously across all three phases. Content builds topical authority clusters. Technical enables indexation and AI extraction. Links close the domain authority gap. Each phase compounds on the last — by month 12, Pocketpills should be the most comprehensive licensed online pharmacy content destination in Canada.</p>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase">
+    <div class="phase-header" onclick="togglePhase(0)">
+      <div class="phase-num" style="background:var(--pp-coral)">1</div>
+      <div class="phase-meta">
+        <div class="phase-title">Months 1–3 — Foundation</div>
+        <div class="phase-sub">Fix what's broken, plant the seeds, launch quick wins</div>
+      </div>
+      <div class="phase-tags">
+        <span class="tag tag-red">Technical SEO</span>
+        <span class="tag tag-purple">Content hubs</span>
+        <span class="tag tag-teal">Tools</span>
+      </div>
+      <div class="phase-toggle" id="toggle-0">▼</div>
+    </div>
+    <div class="phase-body" id="phase-0">
+
+      <div class="track-label track-technical">Track 1 — Technical (Weeks 1–4)</div>
+      <div class="tactic">
+        <div class="tactic-icon">🗑️</div>
+        <div>
+          <div class="tactic-title">Audit and deprecate pharmacy locator pages</div>
+          <div class="tactic-desc">Crawl all /pharmacy-near-me/ pages. 301 redirect competitor-name pages (Costco, Shoppers, CareRx) to your /online-pharmacy hub. These pages rank for competitor brands and waste crawl budget while diluting your topical authority for health content. Keep and optimise only pure "online pharmacy [city]" pages with genuine local intent.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🏗️</div>
+        <div>
+          <div class="tactic-title">Add schema markup to all drug and condition pages</div>
+          <div class="tactic-desc">Implement MedicalCondition, Drug, FAQPage, and HowTo schema on every /drug/ and /rx/ page. This is the #1 prerequisite for appearing in Google AI Overviews, Perplexity citations, and featured snippets. Without structured schema, your content cannot be machine-extracted by AI engines regardless of content quality.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">⚡</div>
+        <div>
+          <div class="tactic-title">Core Web Vitals pass on new Webflow build</div>
+          <div class="tactic-desc">Ensure the redesigned Webflow build achieves LCP &lt;2.5s, CLS &lt;0.1, INP &lt;200ms before launch. Google holds YMYL (health) sites to a higher standard. Failing Core Web Vitals on a pharmacy site creates a headwind on every subsequent SEO effort — resolve this before content investment begins.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🔗</div>
+        <div>
+          <div class="tactic-title">Build hub-and-spoke internal linking architecture</div>
+          <div class="tactic-desc">Weight Loss hub links to Ozempic, Wegovy, Mounjaro, Saxenda drug pages. Mental Health hub links to escitalopram, sertraline, bupropion pages. Every drug page links back to its parent hub. This passes authority efficiently through the site and signals topical relevance to Google's topic modelling systems.</div>
+        </div>
+      </div>
+
+      <div class="track-label track-content">Track 2 — Content (Months 1–3)</div>
+      <div class="tactic">
+        <div class="tactic-icon">📊</div>
+        <div>
+          <div class="tactic-title">Build the GLP-1 / Weight Loss content hub</div>
+          <div class="tactic-desc">Create a comprehensive /weight-loss/ hub page + 8–10 supporting articles targeting quick-win keywords (KD 17–45). Priority articles: "How to get ozempic in Canada" (KD 24), "Is ozempic covered by OHIP" (KD 39), "Semaglutide vs tirzepatide Canada" (KD 17), "GLP-1 medications comparison Canada 2026". AI-assisted drafts reviewed by in-house pharmacist for E-E-A-T compliance.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">💰</div>
+        <div>
+          <div class="tactic-title">Drug cost guide series — Maple's highest-traffic tactic</div>
+          <div class="tactic-desc">Create dedicated cost guide pages: "How much does Ozempic cost in Canada" (1,600/mo, KD 47), "Wegovy cost Canada 2026", "Mounjaro cost Canada". These capture high-intent consideration traffic and rank faster than generic health content because they're specific and commercial. Embed your price comparison tool as the primary CTA on each guide.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🧠</div>
+        <div>
+          <div class="tactic-title">Mental health content foundation</div>
+          <div class="tactic-desc">Build /mental-health/ hub + 4–5 supporting articles. Generic "mental health medication" volume is low, so target specific angles: "antidepressants for anxiety Canada", "SSRI vs SNRI Canada", "online ADHD assessment Canada". These anchor the Mental Health T4 template SEO layer and support paid campaigns simultaneously.</div>
+        </div>
+      </div>
+
+      <div class="track-label track-links">Track 3 — Links and Authority (Months 1–3)</div>
+      <div class="tactic">
+        <div class="tactic-icon">📋</div>
+        <div>
+          <div class="tactic-title">Canadian health media outreach — target 30 new links</div>
+          <div class="tactic-desc">Target: CBC Health, Globe &amp; Mail health section, Canadian Living, Chatelaine, Today's Parent, Healthing.ca. Pitch data-led stories from your 800,000+ patient database — "Canadians spent X on Ozempic in 2025", "Most prescribed medications by province". You have unique, proprietary data competitors don't have. Use it.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">👨‍⚕️</div>
+        <div>
+          <div class="tactic-title">Doctor and pharmacist authored content with visible bylines</div>
+          <div class="tactic-desc">Every major article needs a named pharmacist or doctor byline with credentials, licence numbers, and author page. Google's E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) framework is critical for YMYL health content. Authors with LinkedIn profiles and verifiable credentials earn trust signals that anonymous content never can.</div>
+        </div>
+      </div>
+
+      <div class="phase-kpis">
+        <div class="pkpi"><div class="pkpi-val">+40%</div><div class="pkpi-lbl">organic traffic growth</div></div>
+        <div class="pkpi"><div class="pkpi-val">15+</div><div class="pkpi-lbl">articles published</div></div>
+        <div class="pkpi"><div class="pkpi-val">38</div><div class="pkpi-lbl">domain authority target</div></div>
+        <div class="pkpi"><div class="pkpi-val">30+</div><div class="pkpi-lbl">new backlinks earned</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase">
+    <div class="phase-header" onclick="togglePhase(1)">
+      <div class="phase-num" style="background:var(--pp-teal)">2</div>
+      <div class="phase-meta">
+        <div class="phase-title">Months 4–6 — Authority building</div>
+        <div class="phase-sub">Launch tools, expand verticals, own GLP-1 searches</div>
+      </div>
+      <div class="phase-tags">
+        <span class="tag tag-teal">Interactive tools</span>
+        <span class="tag tag-green">Drug hubs</span>
+        <span class="tag tag-lime">Comparisons</span>
+      </div>
+      <div class="phase-toggle" id="toggle-1">▼</div>
+    </div>
+    <div class="phase-body" id="phase-1">
+
+      <div class="tactic" style="margin-top:16px">
+        <div class="tactic-icon">🧮</div>
+        <div>
+          <div class="tactic-title">Launch interactive tools — Felix's biggest traffic driver</div>
+          <div class="tactic-desc">Build and launch: GLP-1 eligibility calculator (integrated into the Weight Loss T4 template — already in your component library), BMI calculator with Canada-specific context and GLP-1 callout, and a Drug price comparison tool upgrade (your /search-prices page exists — SEO-optimise and promote). Each tool targets 1K–27K searches/mo with low KD because tools are technically hard to replicate.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🌟</div>
+        <div>
+          <div class="tactic-title">Comprehensive Ozempic, Wegovy, and Mounjaro drug hubs</div>
+          <div class="tactic-desc">Transform /drug/ozempic from a thin page to a full content hub: mechanism of action, dosage guide, side effects with frequency data, cost in Canada by province, insurance coverage province-by-province, "how to get" section with Pocketpills pathway, patient FAQ with 20+ questions and schema markup. Target top 10 for "ozempic canada" (18K/mo) by end of month 6.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🆚</div>
+        <div>
+          <div class="tactic-title">Competitor comparison pages — capture branded traffic</div>
+          <div class="tactic-desc">Create "Pocketpills vs Felix" and "Pocketpills vs Maple" comparison pages. Maple captures position 5 for "felix" (49,500/mo) with their comparison page. Even a 0.1% CTR on a competitor's branded search = 50 visits/mo of high-intent traffic at zero ad cost. Honest comparisons also generate natural links from health journalists and bloggers.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🧠</div>
+        <div>
+          <div class="tactic-title">Mental health vertical expansion to full hub</div>
+          <div class="tactic-desc">Launch the full /mental-health/ T4 template with drug detail pages for escitalopram, sertraline, bupropion, and venlafaxine. Target "anxiety medication Canada", "depression treatment online Canada", "ADHD medication Canada". Mental health search volume is low on generic terms but high-intent and low-competition — ideal positioning for a licensed pharmacy with E-E-A-T credibility.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🔗</div>
+        <div>
+          <div class="tactic-title">Digital PR — State of Canadian Online Pharmacy report</div>
+          <div class="tactic-desc">Publish an annual data report using anonymised, aggregated patient data. Pitch to BNN Bloomberg, Financial Post, CBC Business, and major health publications. This generates tier-1 editorial links (.ca news domains carry heavy authority weight) and positions Pocketpills as the source of truth for Canadian online pharmacy data.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">📱</div>
+        <div>
+          <div class="tactic-title">Prescription transfer SEO campaign</div>
+          <div class="tactic-desc">Build dedicated content around "how to transfer a prescription online" with city-specific variants (Toronto, Vancouver, Calgary, Ottawa). Target people currently at Shoppers/Rexall who are searching for convenience. Landing pages integrate directly with the /transfer T10 funnel. Add HowTo schema for step-by-step process content.</div>
+        </div>
+      </div>
+
+      <div class="phase-kpis">
+        <div class="pkpi"><div class="pkpi-val">+120%</div><div class="pkpi-lbl">organic traffic growth</div></div>
+        <div class="pkpi"><div class="pkpi-val">40+</div><div class="pkpi-lbl">articles total published</div></div>
+        <div class="pkpi"><div class="pkpi-val">41</div><div class="pkpi-lbl">domain authority target</div></div>
+        <div class="pkpi"><div class="pkpi-val">3</div><div class="pkpi-lbl">interactive tools live</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase">
+    <div class="phase-header" onclick="togglePhase(2)">
+      <div class="phase-num" style="background:var(--pp-indigo)">3</div>
+      <div class="phase-meta">
+        <div class="phase-title">Months 7–12 — Domination</div>
+        <div class="phase-sub">Become Canada's #1 online health content destination</div>
+      </div>
+      <div class="phase-tags">
+        <span class="tag tag-purple">Programmatic SEO</span>
+        <span class="tag tag-warn">Retention content</span>
+        <span class="tag tag-red">DA parity</span>
+      </div>
+      <div class="phase-toggle" id="toggle-2">▼</div>
+    </div>
+    <div class="phase-body" id="phase-2">
+
+      <div class="tactic" style="margin-top:16px">
+        <div class="tactic-icon">⚙️</div>
+        <div>
+          <div class="tactic-title">Programmatic SEO — 500+ drug pages via Webflow CMS</div>
+          <div class="tactic-desc">Use the Webflow CMS (already part of your infrastructure) to auto-generate optimised T7 pages for every drug in your catalogue. Template: drug name, class, conditions treated, cost in Canada, provincial coverage, delivery timeline, CTA. 500+ pages = 500+ long-tail "[drug name] Canada" keyword rankings. This alone could triple your total keyword count and create a deep content moat competitors cannot quickly replicate.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">📰</div>
+        <div>
+          <div class="tactic-title">Scale to 16+ articles per month with AI-assisted pipeline</div>
+          <div class="tactic-desc">AI-assisted drafts + 1 in-house editor workflow. Content mix: 40% educational (conditions/mechanisms), 30% cost and access guides, 20% comparison and decision content, 10% news updates (GLP-1 approvals, Health Canada changes). Focus on topical depth — become the most comprehensive Canadian source for GLP-1, mental health medication, and pharmacy transfer content.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🏆</div>
+        <div>
+          <div class="tactic-title">Retention content hub — owned patient lifecycle content</div>
+          <div class="tactic-desc">"How to manage Ozempic side effects", "What to do if you miss a dose", "Ozempic vs Wegovy for long-term use" — these target existing patients, reduce churn, and rank for long-tail questions patients ask after starting treatment. You have real patient outcome data — this is content competitors without 800K patients fundamentally cannot match on depth and credibility.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🌐</div>
+        <div>
+          <div class="tactic-title">Own Google AI Overviews for GLP-1 questions in Canada</div>
+          <div class="tactic-desc">By month 9, if schema, E-E-A-T, and content depth are in place, you should be appearing in AI Overviews for most GLP-1 question queries in Canada. Set up a dedicated Google Search Console filter to track AI Overview impressions separately. The goal is to be the primary cited Canadian source for "ozempic canada" AI answers — the equivalent of owning the featured snippet for 40+ drug and condition queries.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">🎙️</div>
+        <div>
+          <div class="tactic-title">PR and mentions campaign — GEO/AEO fuel</div>
+          <div class="tactic-desc">Actively pitch Pocketpills pharmacists as media spokespeople for health podcasts, YouTube health channels, and national news outlets. Every mention in a podcast description or news article is a potential citation source for AI engines. Target 200+ referring domains by month 12. Brief pharmacists on media training around GLP-1, mental health medication, and online pharmacy access topics.</div>
+        </div>
+      </div>
+      <div class="tactic">
+        <div class="tactic-icon">📊</div>
+        <div>
+          <div class="tactic-title">Province-specific landing pages for top 5 provinces</div>
+          <div class="tactic-desc">Ontario, BC, Alberta, Saskatchewan, Nova Scotia pharmacy pages with province-specific drug coverage information, pricing context, and delivery timelines. "Online pharmacy Ontario" (590/mo, KD 73) is hard but achievable by month 9+ when DA reaches 43+. Province pages also support Google Business Profile signals and local intent queries.</div>
+        </div>
+      </div>
+
+      <div class="phase-kpis">
+        <div class="pkpi"><div class="pkpi-val">+400%</div><div class="pkpi-lbl">organic traffic growth</div></div>
+        <div class="pkpi"><div class="pkpi-val">700+</div><div class="pkpi-lbl">articles + drug pages</div></div>
+        <div class="pkpi"><div class="pkpi-val">44+</div><div class="pkpi-lbl">domain authority (parity)</div></div>
+        <div class="pkpi"><div class="pkpi-val">Top 3</div><div class="pkpi-lbl">for GLP-1 queries</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== CONTENT CALENDAR ======================== -->
+<div class="section" id="s-content">
+
+  <div class="card-teal">
+    <div class="overline overline-light">Content calendar — Months 1–3</div>
+    <h2 style="color:#fff;font-size:20px;margin-bottom:6px;font-family:'Playfair Display',serif">16 high-priority pieces. AI-drafted. Pharmacist-reviewed. Doctor-bylined.</h2>
+    <p style="color:var(--pp-teal-light);font-size:13px;max-width:660px">Every article follows the same production workflow: AI-assisted first draft → in-house editor review → pharmacist/doctor fact-check + byline → FAQ schema added → published with internal links to hub pages. Target 4–6 pieces per month in months 1–3, scaling to 16+ by month 9.</p>
+  </div>
+
+  <div class="card">
+    <div class="cal-section-label" style="color:var(--pp-coral)">
+      <span>🔥</span> Month 1 — GLP-1 quick wins (publish immediately)
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-coral">Week 1</span>
+      <div style="flex:1">
+        <div class="content-title">How to get Ozempic in Canada (without paying full price)</div>
+        <div class="content-meta">KD 24 · 1,000/mo · Hub page format + FAQ schema · Direct AI Overview candidate · Pharmacist byline required</div>
+      </div>
+      <span class="tag tag-green">Quick win</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-coral">Week 1</span>
+      <div style="flex:1">
+        <div class="content-title">Is Ozempic covered by OHIP? Complete provincial coverage guide</div>
+        <div class="content-meta">KD 39 · 1,300/mo · Province-by-province table · FAQ schema · High AI Overview trigger rate</div>
+      </div>
+      <span class="tag tag-green">Quick win</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-coral">Week 2</span>
+      <div style="flex:1">
+        <div class="content-title">Semaglutide in Canada: what it is, how it works, where to get it</div>
+        <div class="content-meta">KD 17 · 2,900/mo · Umbrella hub page for Ozempic + Wegovy · Links to both drug pages</div>
+      </div>
+      <span class="tag tag-green">Quick win</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-coral">Week 3</span>
+      <div style="flex:1">
+        <div class="content-title">How much does Ozempic cost in Canada in 2026?</div>
+        <div class="content-meta">KD 47 · 1,600/mo · Cost breakdown table by pharmacy, with/without insurance · Pocketpills price CTA</div>
+      </div>
+      <span class="tag tag-purple">Strategic</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-coral">Week 4</span>
+      <div style="flex:1">
+        <div class="content-title">Does Ozempic need to be refrigerated? Storage and handling guide</div>
+        <div class="content-meta">KD 43 · 1,000/mo · High AEO potential — specific, factual, one clear answer · Patient retention content</div>
+      </div>
+      <span class="tag tag-green">Quick win</span>
+    </div>
+
+    <div class="cal-section-label" style="color:var(--pp-teal);margin-top:18px">
+      <span>🎯</span> Month 2 — GLP-1 depth + mental health foundation
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-teal">Month 2</span>
+      <div style="flex:1">
+        <div class="content-title">Ozempic vs Wegovy vs Mounjaro: which is right for you in Canada?</div>
+        <div class="content-meta">Comparison table · Targets 3 high-volume keywords simultaneously · Natural link bait for health journalists</div>
+      </div>
+      <span class="tag tag-purple">Strategic</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-teal">Month 2</span>
+      <div style="flex:1">
+        <div class="content-title">GLP-1 weight loss medications: complete Canadian guide 2026</div>
+        <div class="content-meta">KD 24 · Pillar page for the entire Weight Loss hub · 3,000+ words · Links to all GLP-1 drug pages</div>
+      </div>
+      <span class="tag tag-purple">Strategic</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-teal">Month 2</span>
+      <div style="flex:1">
+        <div class="content-title">Antidepressants in Canada: types, costs, how to get a prescription online</div>
+        <div class="content-meta">Mental health hub foundation · E-E-A-T critical · Doctor byline required · Links to escitalopram, sertraline drug pages</div>
+      </div>
+      <span class="tag tag-lime">Mental health</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-teal">Month 2</span>
+      <div style="flex:1">
+        <div class="content-title">How to transfer your prescription to an online pharmacy (step by step)</div>
+        <div class="content-meta">Direct conversion driver · HowTo schema · Step-by-step format · CTA to /transfer funnel · High retention value</div>
+      </div>
+      <span class="tag tag-coral">Conversion</span>
+    </div>
+
+    <div class="cal-section-label" style="color:var(--pp-indigo);margin-top:18px">
+      <span>🏗️</span> Month 3 — Expansion, tools, and comparison plays
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-purple">Month 3</span>
+      <div style="flex:1">
+        <div class="content-title">Finasteride in Canada: cost, side effects, how to get it online</div>
+        <div class="content-meta">KD 32 · 1,300/mo · Hair loss hub foundation · Pairs with Hair Loss T4 template launch</div>
+      </div>
+      <span class="tag tag-green">Quick win</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-purple">Month 3</span>
+      <div style="flex:1">
+        <div class="content-title">Why am I not losing weight on Ozempic? Common questions answered</div>
+        <div class="content-meta">KD 37 · 590/mo · High AEO potential · Patient retention content · Reduces early dropout and support tickets</div>
+      </div>
+      <span class="tag tag-green">Quick win</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-purple">Month 3</span>
+      <div style="flex:1">
+        <div class="content-title">LAUNCH: GLP-1 eligibility calculator (interactive tool)</div>
+        <div class="content-meta">No KD competition · Tool is unique · Generates backlinks organically · Drives assessment starts · Embed on Weight Loss T4 page</div>
+      </div>
+      <span class="tag tag-teal">Tool launch</span>
+    </div>
+    <div class="content-row">
+      <span class="mo-badge tag-purple">Month 3</span>
+      <div style="flex:1">
+        <div class="content-title">Best online pharmacies in Canada 2026: an honest comparison</div>
+        <div class="content-meta">Comparison page · "best online pharmacy canada" ~1.2K/mo · Transparent comparison with Shoppers, Felix, Maple vs Pocketpills</div>
+      </div>
+      <span class="tag tag-purple">Strategic</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== GEO / AEO ======================== -->
+<div class="section" id="s-geo">
+
+  <div class="card-teal">
+    <div class="overline overline-light">GEO / AEO strategy — Generative &amp; Answer Engine Optimisation</div>
+    <h2 style="color:#fff;font-size:22px;margin-bottom:8px;font-family:'Playfair Display',serif">You're already in ChatGPT. Now make it deliberate.</h2>
+    <p style="color:var(--pp-teal-light);font-size:14px;max-width:700px">You're seeing conversions from ChatGPT with zero tracking infrastructure. This means you're being cited in AI answers by accident — likely because you have real drug pricing data. The opportunity is to systematically optimise for every major AI engine: Google AI Overviews, Perplexity, ChatGPT, Claude, and Bing Copilot.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="overline">Google AI Overviews — optimisation checklist</div>
+      <div class="geo-item">
+        <div class="geo-title">FAQPage schema on every drug and condition page</div>
+        <div class="geo-body">FAQ schema is the primary signal Google uses to extract content into AI Overviews. Every drug question — "how does ozempic work", "is semaglutide safe", "how to get a prescription online" — triggers an AI Overview. Without schema markup, your content cannot be machine-extracted. Target: 100% of drug and condition pages have FAQPage schema by end of month 2.</div>
+      </div>
+      <div class="geo-item">
+        <div class="geo-title">Direct answers in the first 100–150 words of every article</div>
+        <div class="geo-body">AI Overviews pull from the opening paragraph, not the conclusion. Every article should open with a 2–3 sentence direct answer to the title question — then elaborate. "Ozempic costs between $250–$400/month in Canada without insurance. Most provincial drug plans do not cover it for weight loss alone..." — then provide the full article. This structure also improves featured snippet eligibility.</div>
+      </div>
+      <div class="geo-item">
+        <div class="geo-title">HowTo schema for all process and instructional content</div>
+        <div class="geo-body">"How to transfer a prescription", "How to get Ozempic in Canada", "How to inject Ozempic", "How to store Wegovy" — all need HowTo schema with numbered steps. Google renders these as visual step-by-step sequences in AI Overviews, featured snippets, and voice search results. These formats drive significantly higher CTR than standard blue links.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="overline overline-teal">ChatGPT, Perplexity, and other AI engines</div>
+      <div class="geo-item">
+        <div class="geo-title">Build comprehensive reference pages for each drug</div>
+        <div class="geo-body">AI engines heavily weight comprehensive, well-structured reference pages — the kind of content you'd expect on a government or academic health site. Create definitive reference pages for each major drug: detailed, neutral, well-cited, updated with Health Canada approval dates and regulatory changes. These become the canonical sources that AI engines pull from repeatedly.</div>
+      </div>
+      <div class="geo-item">
+        <div class="geo-title">Get cited by the health media AI engines trust most</div>
+        <div class="geo-body">ChatGPT and Perplexity preferentially cite CBC Health, Globe &amp; Mail, Healthline, and major .ca health publications over pharmacy sites directly. Your PR strategy (pitching data stories to these outlets) serves double duty: backlinks for SEO + citation sources for GEO. When CBC writes "according to Pocketpills data...", AI engines see it and cite it.</div>
+      </div>
+      <div class="geo-item">
+        <div class="geo-title">Structured pricing data for drug cost queries</div>
+        <div class="geo-body">You have unique, real-time pricing data no competitor has at scale. Add Product/Offer schema to drug pages with current Canadian pricing. Perplexity in particular surfaces price data in answers to cost queries. "How much does Wegovy cost in Canada" with structured Product schema = direct citation opportunity. Your /search-prices page is already close — add the schema layer.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="overline overline-coral" style="margin-bottom:12px">AEO target list — the 10 AI answers Pocketpills must own</div>
+    <div class="answer-grid">
+      <div class="answer-item">
+        <div class="answer-q">"How to get Ozempic in Canada"</div>
+        <div class="answer-meta">1,000/mo · KD 24 · No licensed pharmacy owns this answer clearly yet</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"Is Ozempic covered by OHIP?"</div>
+        <div class="answer-meta">1,300/mo · KD 39 · High AI Overview trigger rate for provincial coverage questions</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"How much does Ozempic cost in Canada?"</div>
+        <div class="answer-meta">1,600/mo · Maple currently owns this · Winnable with schema + structured pricing data</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"What is the difference between Ozempic and Wegovy?"</div>
+        <div class="answer-meta">High AI search frequency · Comparison content + schema wins · Multiple entry points</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"Can I transfer my prescription online in Canada?"</div>
+        <div class="answer-meta">High intent · No competitor owns this clearly · Direct conversion driver for /transfer funnel</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"What antidepressants can I get online in Canada?"</div>
+        <div class="answer-meta">Mental health + online pharmacy intersection · Largely untapped by competitors currently</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"How long does it take for Ozempic to work?"</div>
+        <div class="answer-meta">590/mo · KD 58 · Strong AI Overview candidate · Patient retention + acquisition dual value</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"Best online pharmacy in Canada"</div>
+        <div class="answer-meta">~1.2K/mo · You should own this — it is your brand promise and core value proposition</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"Mounjaro vs Ozempic Canada"</div>
+        <div class="answer-meta">Rising search trend · Comparison content · Moderate KD · Targets high-value GLP-1 consideration stage</div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-q">"Why am I not losing weight on Ozempic?"</div>
+        <div class="answer-meta">590/mo · KD 37 · High retention value · Strong AI trigger format — specific, personal question</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== KPIs ======================== -->
+<div class="section" id="s-kpis">
+
+  <div class="card-dark">
+    <div class="overline overline-light">KPIs and success targets</div>
+    <h2 style="color:#fff;font-size:22px;margin-bottom:8px;font-family:'Playfair Display',serif">From 22K to 110K+ organic visits in 12 months.</h2>
+    <p style="color:#AAA4FF;max-width:700px;font-size:14px">These targets are based on Semrush estimated traffic (which typically underestimates real GA4 visits by 3–5× for pharmacy sites). Track both Semrush estimated and Google Search Console actual impressions/clicks. The growth curve below represents Semrush estimates — your real GA4 numbers should be proportionally higher throughout.</p>
+  </div>
+
+  <div class="card">
+    <div class="overline" style="margin-bottom:4px">Organic traffic projection vs competitors</div>
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:#8C60E6;height:3px"></div> Pocketpills projected</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#2B6CB0;height:2px;opacity:0.6"></div> Felix (current baseline)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#043B45;height:2px;opacity:0.6"></div> Maple (current baseline)</div>
+    </div>
+    <div style="position:relative;height:280px">
+      <canvas id="trafficChart" role="img" aria-label="Traffic growth projection from month 0 to month 12, showing Pocketpills growing from 22K to 110K visits per month while Felix holds at 81K and Maple holds at 194K">Traffic projected to grow from 22,300 to 110,000+ monthly organic visits over 12 months.</canvas>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="overline overline-coral">Month 3 targets</div>
+      <div class="divider" style="margin:10px 0 12px"></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Organic traffic (est.)</span><span class="kpi-target-val">+40% → ~31K</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Domain authority</span><span class="kpi-target-val">36 → 38</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Referring domains</span><span class="kpi-target-val">1,467 → 1,600</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Articles published</span><span class="kpi-target-val">15+ pieces</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Quick-win KW in top 10</span><span class="kpi-target-val">10+ terms</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">GLP-1 tool live</span><span class="kpi-target-val" style="color:var(--pp-success)">✓ Launched</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Schema coverage</span><span class="kpi-target-val">100% drug pages</span></div>
+    </div>
+    <div class="card">
+      <div class="overline overline-teal">Month 6 targets</div>
+      <div class="divider" style="margin:10px 0 12px"></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Organic traffic (est.)</span><span class="kpi-target-val">+120% → ~49K</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Domain authority</span><span class="kpi-target-val">38 → 41</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Referring domains</span><span class="kpi-target-val">1,600 → 2,000</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Total articles published</span><span class="kpi-target-val">40+ pieces</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">"ozempic canada" rank</span><span class="kpi-target-val">Top 10</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">AI Overview appearances</span><span class="kpi-target-val">20+ queries</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Interactive tools live</span><span class="kpi-target-val">3 tools</span></div>
+    </div>
+    <div class="card">
+      <div class="overline">Month 12 targets</div>
+      <div class="divider" style="margin:10px 0 12px"></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Organic traffic (est.)</span><span class="kpi-target-val" style="color:var(--pp-purple)">+400% → 110K+</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Domain authority</span><span class="kpi-target-val" style="color:var(--pp-purple)">41 → 44+ (parity)</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Referring domains</span><span class="kpi-target-val" style="color:var(--pp-purple)">2,000 → 3,000+</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Articles + drug pages</span><span class="kpi-target-val" style="color:var(--pp-purple)">700+</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">GLP-1 KW in top 3</span><span class="kpi-target-val" style="color:var(--pp-purple)">10+ terms</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">Paid CAC reduction</span><span class="kpi-target-val" style="color:var(--pp-success)">-30% estimated</span></div>
+      <div class="kpi-target-row"><span class="kpi-target-label">AI Overview ownership</span><span class="kpi-target-val">Primary CA source</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="overline overline-coral" style="margin-bottom:12px">The business case — acquisition and retention ROI</div>
+    <div class="grid2" style="margin-bottom:0">
+      <div>
+        <h3>Acquisition — reducing paid CAC</h3>
+        <p style="margin-top:8px">You're currently buying consideration-stage traffic with Meta and Google — the most expensive part of the funnel. Every organic visitor who finds you via "how to get ozempic canada" or "is ozempic covered by OHIP" is a pre-qualified lead you didn't pay for. At scale, organic consideration content reduces your effective CAC by 20–40% because you're warming leads before they ever see a paid ad. The paid media spend is then amplified, not replaced.</p>
+      </div>
+      <div>
+        <h3>Retention — reducing churn and support costs</h3>
+        <p style="margin-top:8px">Content like "why am I not losing weight on Ozempic", "how to manage side effects", and "what to do if you miss a dose" keeps existing patients engaged, informed, and trusting Pocketpills as their primary healthcare resource. Every content touchpoint post-conversion reinforces the relationship and directly supports your Rx transfer goal — patients who trust your content trust your pharmacy.</p>
+      </div>
+    </div>
+    <div class="highlight-box highlight-purple" style="margin-top:16px">
+      <div style="font-size:13px;font-weight:600;color:var(--pp-indigo);margin-bottom:6px">The #1 single action to take this week</div>
+      <div style="font-size:13px;color:var(--pp-text-muted)">Write and publish <strong style="color:var(--pp-dark)">"How to get Ozempic in Canada"</strong> — KD 24, 1,000 searches/month, no licensed Canadian pharmacy cleanly owns this answer. Add FAQPage schema. This one article could rank top 3 within 4–6 weeks and immediately appear in ChatGPT answers about Ozempic access in Canada. It's the fastest path from zero organic visibility to qualified consideration-stage traffic in your #1 revenue vertical.</div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">Pocketpills SEO / GEO / AEO Growth Plan · Semrush audit June 2026 · Confidential — internal use only</p>
+</footer>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('s-' + id).classList.add('active');
+  const ids = ['audit','gaps','keywords','plan','content','geo','kpis'];
+  const idx = ids.indexOf(id);
+  if (idx >= 0) document.querySelectorAll('.nav-btn')[idx].classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function togglePhase(i) {
+  const body = document.getElementById('phase-' + i);
+  const toggle = document.getElementById('toggle-' + i);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open');
+  toggle.textContent = isOpen ? '▼' : '▲';
+}
+
+// Chart
+window.addEventListener('load', function() {
+  const ctx = document.getElementById('trafficChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Now','Mo 1','Mo 2','Mo 3','Mo 4','Mo 5','Mo 6','Mo 7','Mo 8','Mo 9','Mo 10','Mo 11','Mo 12'],
+      datasets: [
+        {
+          label: 'Pocketpills projected',
+          data: [22,24,27,31,37,43,49,58,68,80,90,100,110],
+          borderColor: '#8C60E6',
+          backgroundColor: 'rgba(140,96,230,0.07)',
+          borderWidth: 2.5,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: '#8C60E6',
+          pointRadius: 4,
+          pointHoverRadius: 6
+        },
+        {
+          label: 'Felix (current)',
+          data: [81,81,81,81,81,81,81,81,81,81,81,81,81],
+          borderColor: '#2B6CB0',
+          borderDash: [6,4],
+          borderWidth: 1.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0
+        },
+        {
+          label: 'Maple (current)',
+          data: [194,194,194,194,194,194,194,194,194,194,194,194,194],
+          borderColor: '#043B45',
+          borderDash: [6,4],
+          borderWidth: 1.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + 'K visits'
+          }
+        }
+      },
+      scales: {
+        y: {
+          title: { display: true, text: 'Estimated organic visits / month (K)', font: { size: 11 }, color: '#8D90B6' },
+          ticks: { callback: v => v + 'K', font: { size: 11 }, color: '#8D90B6' },
+          grid: { color: 'rgba(0,0,0,0.04)' },
+          border: { color: '#E7E7ED' }
+        },
+        x: {
+          ticks: { font: { size: 11 }, color: '#8D90B6' },
+          grid: { display: false },
+          border: { color: '#E7E7ED' }
+        }
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
